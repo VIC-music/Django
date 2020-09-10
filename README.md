@@ -1,4 +1,5 @@
 #VIC - Django Project
+Main repository for the VIC Project
 
 # Virtual Environment Setup
 So we're going to be developing this project with the assistance of python's `venv` module to keep track of python dependencies.
