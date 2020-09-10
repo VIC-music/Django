@@ -1,4 +1,3 @@
-#VIC - Django Project
 Main repository for the VIC Project
 
 # Virtual Environment Setup
@@ -6,12 +5,14 @@ So we're going to be developing this project with the assistance of python's `ve
 Initialising it requires Python 3.8 and pip to be installed to your command line. Run the following commands:
 
 >python --version
+
 >pip --version
 
 They should return something starting with Python 3.8 and pip 19 or 20. Once you know that both tools are functional, run the
 following commands to build a virtual environment.
 
 >python -m venv venv
+
 >source venv/bin/activate
 
 You will now be running a virtual environment where you cannot access any of your previously installed Python packages.
