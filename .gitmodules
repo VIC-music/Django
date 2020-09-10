@@ -1,0 +1,6 @@
+[submodule "User-Stories-"]
+	path = User-Stories-
+	url = https://github.com/VIC-music/User-Stories-.git
+[submodule "webserver"]
+	path = webserver
+	url = https://github.com/VIC-music/webserver.git
