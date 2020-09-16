@@ -1,0 +1,43 @@
+version: '3.7'
+
+# Lists all the services to be containerized
+services: 
+    db:
+        container_name: postgresdb
+        image: postgres:latest
+        # Database always restarts when it exits
+        restart: always
+        env_file:
+            - .vic.env
+        ports:
+            - 5432:5432
+
+        # Volumes are used for data persistence - important for the database!
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+    web:
+        container_name: django
+        build: .
+        command: >
+            gunicorn VIC.wsgi:application --bind 0.0.0.0:8000 --workers=4
+        env_file:
+            - .vic.env
+        ports: 
+            - 8000:8000
+        depends_on:
+            - db
+              #    nginx:
+              #        container_name: nginx
+              #        image: nginx:mainline-alpine
+              #        restart: always
+              #        ports:
+              #            - 1337:80
+              #        volumes:
+              #            - ./nginx:/etc/nginx/conf.d
+              #        depends_on:
+              #            - web
+
+volumes:
+    postgres-data:
+
+
